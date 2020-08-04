@@ -1,0 +1,22 @@
+{
+  "properties": [
+    {
+      "name": "snowflake.twepoch",
+      "type": "java.lang.Long",
+      "defaultValue": 1596240000000,
+      "description": "snowflake: start timestamp in millisecond, default as 2020-08-01T00:00:00+00:00 (RFC-3339)."
+    },
+    {
+      "name": "snowflake.datacenterId",
+      "type": "java.lang.Long",
+      "defaultValue": 0,
+      "description": "snowflake: the id of data center, range as [0, 3], default as 0."
+    },
+    {
+      "name": "snowflake.workerId",
+      "type": "java.lang.Long",
+      "defaultValue": 0,
+      "description": "snowflake: the id of mathine, range as [0, 3], default as 0."
+    }
+  ]
+}
