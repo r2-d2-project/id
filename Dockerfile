@@ -2,11 +2,11 @@ FROM openjdk:11-slim
 
 WORKDIR /home/app
 
-COPY ./.mvn/ ./.mvn/
-COPY ./src/ ./src/
-COPY ./mvnw ./
-COPY ./pom.xml ./
+COPY ./.mvn/ ./build/.mvn/
+COPY ./src/ ./build/src/
+COPY ./mvnw ./build/
+COPY ./pom.xml ./build/
 
-RUN ./mvnw clean && ./mvnw package -Dmaven.test.skip=true
+RUN cd ./build && ./mvnw clean && ./mvnw package -Dmaven.test.skip=true && mv ./target/id.jar ../ && cd ../ && rm -fr ./build
 
-CMD [ "java", "-jar", "./target/id.jar" ]
+CMD [ "java", "-jar", "id.jar" ]
