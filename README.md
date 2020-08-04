@@ -8,9 +8,43 @@ It is a distributed ID generator powered by the algorithm of [snowflake](https:/
 - support at most 16 distributed nodes (4 data centers, each contains 4 machines)
 - at most generate 256 unique IDs at the same milliseconds from each node
 
+### Demo
+
+https://id.zzc.icu/
+
+### Run
+
+Execute following commands to compile and run.
+
+``` bash
+./mvnw clean && ./mvnw package -Dmaven.test.skip=true # macOS and Linux only
+./mvnw.cmd clean && ./mvnw.cmd package -Dmaven.test.skip=true # Windows only
+
+java -jar ./target/id.jar
+```
+
+### Config
+
+The default config file `application.properties` is like:
+
+```
+server.port=8004
+snowflake.twepoch=1596240000000
+snowflake.datacenterId=0
+snowflake.workerId=0
+```
+
+See [additional-spring-configuration-metadata.json](./src/main/resources/META-INF/additional-spring-configuration-metadata.json) for more details.
+
+Place user-defined config file at path `./target/config/application.properties` to override the default one.
+
+### Docker
+
+See [Docker.md](./Docker.md) for details.
+
 ### Develop
 
-Execute following commands.
+Execute following commands before making any change.
 
 ``` bash
 git config --local core.autocrlf input
