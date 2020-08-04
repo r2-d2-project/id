@@ -6,11 +6,12 @@ It is a distributed ID generator powered by the algorithm of [snowflake](https:/
 
 - generate 53-bit integer (JavaScript comparable)  as unique ID ascending by time
 - support at most 16 distributed nodes (4 data centers, each contains 4 machines)
-- at most generate 256 unique IDs at the same milliseconds from each node
+- at most generate 256 IDs per milliseconds from each node
 
 ### Demo
 
-https://id.zzc.icu/
+- integer: https://id.zzc.icu/
+- string: https://id.zzc.icu/type/string
 
 ### Run
 
