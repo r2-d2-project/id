@@ -7,6 +7,6 @@ COPY ./src/ ./build/src/
 COPY ./mvnw ./build/
 COPY ./pom.xml ./build/
 
-RUN cd ./build && ./mvnw clean && ./mvnw package -Dmaven.test.skip=true && mv ./target/id.jar ../ && cd ../ && rm -fr ./build
+RUN cd ./build && ./mvnw clean && ./mvnw package && mv ./target/id.jar ../ && cd ../ && rm -fr ./build
 
 CMD [ "java", "-jar", "id.jar" ]
