@@ -4,7 +4,7 @@
 
 ``` sh
 git clean -xfd
-docker build -t zzcgwu/id .
+docker build -t zzcgwu/github_message-helper_id .
 ```
 
 ### Run
@@ -14,7 +14,7 @@ docker build -t zzcgwu/id .
 #### Script
 
 ``` sh
-docker run -d --restart on-failure --name id -v ./config/:/home/app/config/ -p 8004:8004 zzcgwu/id
+docker run -d --restart on-failure --name id -v ./config/:/home/app/config/ -p 8004:8004 zzcgwu/github_message-helper_id
 ```
 
 #### Compose
@@ -29,7 +29,7 @@ services:
       - './config/:/home/app/config/'
     ports:
       - '8004:8004'
-    image: zzcgwu/id
+    image: zzcgwu/github_message-helper_id
 ```
 
 ``` sh
