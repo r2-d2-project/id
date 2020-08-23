@@ -39,11 +39,21 @@ snowflake.workerId=0
 
 See [additional-spring-configuration-metadata.json](./src/main/resources/META-INF/additional-spring-configuration-metadata.json) for more details.
 
-Place user-defined config file at path `./target/config/application.properties` to override the default one.
+Place user-defined config file at path `<jar-location>/config/application.properties` to override the default one.
 
 ### Docker
 
-See [Docker.md](./Docker.md) for details.
+Execute following commands to pull and run:
+
+``` sh
+docker pull messagehelper/id
+
+docker run -d --restart on-failure --name id -v ./config/:/home/app/config/ -p 8004:8004 messagehelper/id
+```
+
+Path `/home/app/` in docker container acts as `<jar-location>`.
+
+See [Docker.md](./Docker.md) for more details.
 
 ### Develop
 
