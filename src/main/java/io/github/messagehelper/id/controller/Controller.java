@@ -16,6 +16,7 @@ public class Controller {
 
   public Controller(@Autowired IdDao idDao) {
     this.idDao = idDao;
+    //
     headers = new HttpHeaders();
     headers.add("content-type", "application/json;charset=utf-8");
     headers.add("cache-control", "no-store, no-cache, must-revalidate, proxy-revalidate");
@@ -24,23 +25,8 @@ public class Controller {
     headers.add("surrogate-control", "no-store");
   }
 
-  @GetMapping("/")
-  public ResponseEntity<GetTypeLongResponseDto> getType() {
-    return getTypeLong();
-  }
-
-  @GetMapping("/type/int")
-  public ResponseEntity<GetTypeLongResponseDto> getTypeInt() {
-    return getTypeLong();
-  }
-
-  @GetMapping("/type/integer")
-  public ResponseEntity<GetTypeLongResponseDto> getTypeInteger() {
-    return getTypeLong();
-  }
-
-  @GetMapping("/type/long")
-  public ResponseEntity<GetTypeLongResponseDto> getTypeLong() {
+  @GetMapping("/*")
+  public ResponseEntity<GetTypeLongResponseDto> get() {
     return ResponseEntity.status(200)
         .headers(headers)
         .body(new GetTypeLongResponseDto(idDao.generate()));
