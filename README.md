@@ -17,7 +17,7 @@ It is a distributed ID generator powered by the algorithm of [snowflake](https:/
 
 Execute following commands to compile and run.
 
-``` bash
+``` sh
 git clean -xfd
 
 ./mvnw clean && ./mvnw package # macOS and Linux only
@@ -48,7 +48,7 @@ Execute following commands to pull and run:
 ``` sh
 docker pull messagehelper/id
 
-docker run -d --restart on-failure --name id -v ./config/:/home/app/config/ -p 8004:8004 messagehelper/id
+docker run --detach --name id --publish 8004:8004 --restart always --volume ./mount/config/:/home/app/config/ messagehelper/id
 ```
 
 Path `/home/app/` in docker container acts as `<jar-location>`.
@@ -59,7 +59,7 @@ See [Docker.md](./Docker.md) for more details.
 
 Execute following commands before making any change.
 
-``` bash
+``` sh
 git config --local core.autocrlf input
 git config --local core.safecrlf true
 ```

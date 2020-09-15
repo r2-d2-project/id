@@ -14,7 +14,7 @@ docker build -t messagehelper/id .
 #### Script
 
 ``` sh
-docker run -d --restart on-failure --name id -v ./config/:/home/app/config/ -p 8004:8004 messagehelper/id
+docker run --detach --name id --publish 8004:8004 --restart always --volume ./mount/config/:/home/app/config/ messagehelper/id
 ```
 
 #### Compose
@@ -23,16 +23,16 @@ docker run -d --restart on-failure --name id -v ./config/:/home/app/config/ -p 8
 version: '3.3'
 services:
   id:
-    restart: on-failure
     container_name: id
-    volumes:
-      - './config/:/home/app/config/'
+    image: messagehelper/id
     ports:
       - '8004:8004'
-    image: messagehelper/id
+    restart: always
+    volumes:
+      - './mount/config/:/home/app/config/'
 ```
 
 ``` sh
-docker-compose up -d
+docker-compose up --detach
 ```
 
