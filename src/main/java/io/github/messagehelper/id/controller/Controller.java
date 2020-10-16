@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
-  private IdDao idDao;
-  private HttpHeaders headers;
+  private final IdDao idDao;
+  private final HttpHeaders headers;
 
   public Controller(@Autowired IdDao idDao) {
     this.idDao = idDao;
     //
     headers = new HttpHeaders();
-    headers.add("content-type", "application/json;charset=utf-8");
-    headers.add("cache-control", "no-store, no-cache, must-revalidate, proxy-revalidate");
-    headers.add("pragma", "no-cache");
-    headers.add("expires", "no-store");
-    headers.add("surrogate-control", "no-store");
+    headers.add("Content-Type", "application/json;charset=utf-8");
+    headers.add("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+    headers.add("Pragma", "no-cache");
+    headers.add("Expires", "no-store");
+    headers.add("Surrogate-Control", "no-store");
   }
 
   @GetMapping("/*")
@@ -37,5 +37,10 @@ public class Controller {
     return ResponseEntity.status(200)
         .headers(headers)
         .body(new GetTypeStringResponseDto(idDao.generate()));
+  }
+
+  @GetMapping("/type/plain")
+  public String getTypePlain() {
+    return idDao.generate().toString();
   }
 }

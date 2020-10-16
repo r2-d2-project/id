@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-  private ResponseEntity<String> errorResponse;
+  private final ResponseEntity<String> errorResponse;
 
   public GlobalExceptionHandler() {
     HttpHeaders errorHeaders = new HttpHeaders();
