@@ -10,8 +10,48 @@ It is a distributed ID generator powered by the algorithm of [snowflake](https:/
 
 ### Demo
 
-- integer: https://id.zzc.icu/
-- string: https://id.zzc.icu/type/string
+https://id.zzc.icu/
+
+```
+HTTP/1.1 200 
+Content-Type: application/json;charset=utf-8
+Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+Pragma: no-cache
+Expires: no-store
+Surrogate-Control: no-store
+
+{
+  "id": 27159763599360
+}
+```
+
+https://id.zzc.icu/type/string
+
+```
+HTTP/1.1 200 
+Content-Type: application/json;charset=utf-8
+Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+Pragma: no-cache
+Expires: no-store
+Surrogate-Control: no-store
+
+{
+  "id": "27161314156544"
+}
+```
+
+https://id.zzc.icu/type/plain
+
+```
+HTTP/1.1 200 
+Content-Type: application/json;charset=utf-8
+Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+Pragma: no-cache
+Expires: no-store
+Surrogate-Control: no-store
+
+27161426952192
+```
 
 ### Run
 
