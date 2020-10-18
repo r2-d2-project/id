@@ -12,21 +12,29 @@ import org.springframework.stereotype.Component;
 public class IdSnowflakeDao implements IdDao {
   @SuppressWarnings("FieldCanBeLocal")
   private final Logger logger = LoggerFactory.getLogger(IdSnowflakeDao.class);
+
   private final long datacenterIdBits = 2L;
   private final long workerIdBits = 2L;
   private final long sequenceBits = 8L;
+
   @SuppressWarnings("FieldCanBeLocal")
   private final long maxWorkerId = ~(-1L << workerIdBits);
+
   @SuppressWarnings("FieldCanBeLocal")
   private final long maxDatacenterId = ~(-1L << datacenterIdBits);
+
   @SuppressWarnings("FieldCanBeLocal")
   private final long workerIdShift = sequenceBits;
+
   @SuppressWarnings("FieldCanBeLocal")
   private final long datacenterIdShift = sequenceBits + workerIdBits;
+
   @SuppressWarnings("FieldCanBeLocal")
   private final long timestampLeftShift = sequenceBits + workerIdBits + datacenterIdBits;
+
   @SuppressWarnings("FieldCanBeLocal")
   private final long sequenceMask = ~(-1L << sequenceBits);
+
   private final long twepoch;
   private final long datacenterId;
   private final long workerId;
@@ -85,6 +93,11 @@ public class IdSnowflakeDao implements IdDao {
           String.format("result (%d) can't be greater than 2 ^ 53 - 1", result));
     }
     return result;
+  }
+
+  @Override
+  public synchronized Long parse(Long id) {
+    return (id >>> datacenterIdBits + workerIdBits + sequenceBits) + twepoch;
   }
 
   private long tilNextMillis(long lastTimestamp) {
