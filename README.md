@@ -25,6 +25,40 @@ Surrogate-Control: no-store
 }
 ```
 
+https://id.zzc.icu/time
+
+```
+HTTP/1.1 200 
+Content-Type: application/json;charset=utf-8
+Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+Pragma: no-cache
+Expires: no-store
+Surrogate-Control: no-store
+
+{
+  "id": 27887635202048,
+  "timestamp": 1603048504688,
+  "rfc3339": "2020-10-18T19:15:04.688Z"
+}
+```
+
+https://id.zzc.icu/time/27887399788544
+
+```
+HTTP/1.1 200 
+Content-Type: application/json;charset=utf-8
+Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+Pragma: no-cache
+Expires: no-store
+Surrogate-Control: no-store
+
+{
+  "id": 27887399788544,
+  "timestamp": 1603048447214,
+  "rfc3339": "2020-10-18T19:14:07.214Z"
+}
+```
+
 https://id.zzc.icu/type/string
 
 ```
@@ -44,7 +78,7 @@ https://id.zzc.icu/type/plain
 
 ```
 HTTP/1.1 200 
-Content-Type: application/json;charset=utf-8
+Content-Type: text/plain;charset=UTF-8
 Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
 Pragma: no-cache
 Expires: no-store
