@@ -4,7 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class GetTimeResponseDto {
-  private static final SimpleDateFormat RFC3339 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+  private static final SimpleDateFormat RFC3339 =
+      new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
 
   private Long id;
   private Long timestamp;
