@@ -1,4 +1,4 @@
-package io.github.messagehelper.id;
+package io.github.r2d2project.id;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

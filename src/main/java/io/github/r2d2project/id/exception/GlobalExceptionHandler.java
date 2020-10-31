@@ -1,6 +1,6 @@
-package io.github.messagehelper.id.exception;
+package io.github.r2d2project.id.exception;
 
-import io.github.messagehelper.id.dto.GetExceptionResponseDto;
+import io.github.r2d2project.id.dto.GetExceptionResponseDto;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

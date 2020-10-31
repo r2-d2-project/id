@@ -1,9 +1,9 @@
-package io.github.messagehelper.id.controller;
+package io.github.r2d2project.id.controller;
 
-import io.github.messagehelper.id.dao.IdDao;
-import io.github.messagehelper.id.dto.GetTimeResponseDto;
-import io.github.messagehelper.id.dto.GetTypeLongResponseDto;
-import io.github.messagehelper.id.dto.GetTypeStringResponseDto;
+import io.github.r2d2project.id.dao.IdDao;
+import io.github.r2d2project.id.dto.GetTimeResponseDto;
+import io.github.r2d2project.id.dto.GetTypeLongResponseDto;
+import io.github.r2d2project.id.dto.GetTypeStringResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;

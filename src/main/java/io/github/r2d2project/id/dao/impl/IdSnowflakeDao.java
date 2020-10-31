@@ -1,8 +1,8 @@
 // reference: https://www.cnblogs.com/relucent/p/4955340.html
 
-package io.github.messagehelper.id.dao.impl;
+package io.github.r2d2project.id.dao.impl;
 
-import io.github.messagehelper.id.dao.IdDao;
+import io.github.r2d2project.id.dao.IdDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

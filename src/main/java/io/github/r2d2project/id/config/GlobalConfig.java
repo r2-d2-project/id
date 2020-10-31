@@ -1,4 +1,4 @@
-package io.github.messagehelper.id.config;
+package io.github.r2d2project.id.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

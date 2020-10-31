@@ -1,4 +1,4 @@
-package io.github.messagehelper.id.dto;
+package io.github.r2d2project.id.dto;
 
 public class GetTypeLongResponseDto {
   private Long id;

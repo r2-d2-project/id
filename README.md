@@ -120,9 +120,9 @@ Place user-defined config file at path `<jar-location>/config/application.proper
 Execute following commands to pull and run:
 
 ``` sh
-docker pull messagehelper/id
+docker pull r2d2project/id
 
-docker run --detach --name id --publish 8004:8004 --restart always --volume ./mount/config/:/home/app/config/ messagehelper/id
+docker run --detach --name id --publish 8004:8004 --restart always --volume ./mount/config/:/home/app/config/ r2d2project/id
 ```
 
 Path `/home/app/` in docker container acts as `<jar-location>`.
