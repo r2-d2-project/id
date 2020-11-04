@@ -7,6 +7,6 @@ COPY ./src/ ./build/src/
 COPY ./mvnw ./build/
 COPY ./pom.xml ./build/
 
-RUN cd ./build && ./mvnw clean && ./mvnw package && mv ./target/id.jar ../ && cd ../ && rm -fr ./build
+RUN cd ./build/ && ./mvnw clean && ./mvnw package && mv ./target/id.jar ../ && cd ../ && rm -fr ./build/ && mkdir ./config/
 
-CMD [ "java", "-jar", "id.jar" ]
+CMD [ "java", "-jar", "./id.jar" ]
