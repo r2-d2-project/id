@@ -103,6 +103,7 @@ mkdir ./config/
 
 java -jar ./target/id.jar
 
+#         listening port => tcp/8004
 # optional configuration => ./config/application.properties
 ```
 
@@ -115,6 +116,7 @@ docker pull r2d2project/id
 
 docker run --detach --name id --publish 8004:8004 --restart always --volume ./mount/config/:/home/app/config/ r2d2project/id
 
+#         listening port => tcp/8004
 # optional configuration => ./mount/config/application.properties
 ```
 
